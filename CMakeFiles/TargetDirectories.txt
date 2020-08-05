@@ -1,0 +1,3 @@
+/home/peter/CCPPPrograms/SDL_TEST/CMakeFiles/rebuild_cache.dir
+/home/peter/CCPPPrograms/SDL_TEST/CMakeFiles/edit_cache.dir
+/home/peter/CCPPPrograms/SDL_TEST/CMakeFiles/caster.dir
