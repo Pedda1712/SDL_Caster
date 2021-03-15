@@ -21,21 +21,21 @@ void Player::update(float fTime){
 
 void Player::handleKeyEvent(SDL_Keycode sym,uint32_t type){
     
-    bool down = (type == SDL_KEYDOWN) ? true : false;
+    bool down = (type == SDL_KEYDOWN);
     
     switch(sym){
         
         case SDLK_UP:
-            fwd = down ? true : false;
+            fwd = down ;
             break;
         case SDLK_DOWN:
-            bwd = down ? true : false;
+            bwd = down ;
             break;
         case SDLK_RIGHT:
-            lft = down ? true : false;
+            lft = down ;
             break;
         case SDLK_LEFT:
-            rgt = down ? true : false;
+            rgt = down ;
             break;
         
         default:break;

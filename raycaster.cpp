@@ -26,7 +26,7 @@ void Raycaster::drawScene(){
     uint8_t* pixelArray; //Pointer to the Pixel Data of the Texture
     
     SDL_LockTexture(m_screen,NULL,(void**)&pixelArray,&pitch); //Gain Access to the pixel data of the texture to modify it
-    memset(pixelArray,100,m_width*m_height*4); //Clear the pixel data
+    memset(pixelArray,0x00,m_width*m_height*4); //Clear the pixel data
     
     float startAngle = m_player->angle - m_fov/2; // Ray Angle at the left of the sceen
     float finishAngle = m_player->angle + m_fov/2;// Ray Angle at the right of the screen
@@ -112,8 +112,8 @@ void Raycaster::drawScene(){
             uint8_t* texturePixels = (uint8_t*)m_map->textures[hitTexIndex]->pixels;//Pointer to the pixel data
             float currentY = 0; // The current UV-Y-Coordinate at the Texture (always starts from 0)
             
-            //float fadeMod = 60.0f/projected_distance;
-            float fadeMod = 1.0f;
+            float fadeMod = 60.0f/projected_distance;
+            //float fadeMod = 1.0f;
             
             if(startingY <= 0.0f) { // If the line starts offscreen, start at 0 and end at the Maximum height of the Screen and adjust the current UV-Y-Coordinate accordingly
                 currentY = abs(startingY) * tex_y_increase;
